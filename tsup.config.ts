@@ -1,6 +1,8 @@
 import { defineConfig } from 'tsup'
 import { bundleless } from 'tsup-plugin-bundleless'
 
+const { esbuildPlugins, plugins } = bundleless()
+
 export const tsup = defineConfig((option) => ({
   entry: ['src/**/*.ts'],
   target: 'es2022',
@@ -14,5 +16,6 @@ export const tsup = defineConfig((option) => ({
   sourcemap: !!option.watch,
   tsconfig: option.watch ? 'tsconfig.dev.json' : 'tsconfig.json',
   noExternal: ['lodash-es'],
-  ...bundleless(),
+  plugins,
+  esbuildPlugins,
 }))
