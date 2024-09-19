@@ -1,6 +1,6 @@
 {
   "name": "postcss-config-preset",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Minko's PostCSS config preset",
   "type": "module",
   "keywords": [
